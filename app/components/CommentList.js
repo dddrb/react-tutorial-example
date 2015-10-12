@@ -3,10 +3,17 @@ import Comment from './Comment';
 
 class CommentList extends Component {
   render() {
+    const commentNodes = this.props.data.map((comment, index) => {
+      return (
+        <Comment author={comment.author} key={index}>
+          {comment.text}
+        </Comment>
+      );
+    });
+
     return (
       <div className="commentList">
-        <Comment author="Pete Hunt">This is one comment</Comment>
-        <Comment author="Jordan Walke">This is *another* comment</Comment>
+        {commentNodes}
       </div>
     );
   }
