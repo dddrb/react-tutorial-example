@@ -1,11 +1,19 @@
 import React, {Component} from 'react';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
+import io from 'socket.io-client';
+export const socket = io('http://localhost:3000');
 
 class CommentBox extends Component {
+  componentWillMount() {
+    const {actions} = this.props;
+    socket.on('recieve comments', function(comments) {
+      actions.recieveComments(comments);
+    });
+  }
+
   componentDidMount() {
     this.props.actions.searchComments();
-    setInterval(this.props.actions.searchComments, 2000);
   }
 
   render() {
