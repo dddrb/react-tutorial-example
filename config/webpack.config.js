@@ -1,6 +1,6 @@
 module.exports = {
   entry: [
-    './public/javascripts/example.js'
+    './app/index.js'
   ],
   output: {
     path: __dirname + '/static/',
