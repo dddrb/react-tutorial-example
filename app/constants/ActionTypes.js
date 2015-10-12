@@ -1,0 +1,1 @@
+export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
