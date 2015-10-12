@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import Comment from './Comment';
 
 class CommentList extends Component {
@@ -18,5 +18,9 @@ class CommentList extends Component {
     );
   }
 }
+
+CommentList.propTypes = {
+  data: PropTypes.array.isRequired
+};
 
 export default CommentList;

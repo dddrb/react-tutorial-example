@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 
 class CommentForm extends Component {
@@ -25,5 +25,9 @@ class CommentForm extends Component {
     );
   }
 }
+
+CommentForm.propTypes = {
+  onCommentSubmit : PropTypes.func.isRequired
+};
 
 export default CommentForm;

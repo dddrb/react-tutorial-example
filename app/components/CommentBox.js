@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import io from 'socket.io-client';
@@ -26,5 +26,9 @@ class CommentBox extends Component {
     );
   }
 }
+
+CommentBox.propTypes = {
+  data: PropTypes.array.isRequired
+};
 
 export default CommentBox;

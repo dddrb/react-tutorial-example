@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 class Comment extends Component {
   rawMarkup() {
@@ -17,5 +17,10 @@ class Comment extends Component {
     );
   }
 }
+
+Comment.propTypes = {
+  author: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired
+};
 
 export default Comment;

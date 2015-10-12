@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as CommentActions from '../actions/CommentActions';
@@ -15,5 +15,10 @@ class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  comments: PropTypes.array.isRequired
+};
 
 export default connect(state => state.Comment)(Home)
