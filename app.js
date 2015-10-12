@@ -1,3 +1,7 @@
+var webpack = require('webpack');
+var webpackDevMiddleware = require('webpack-dev-middleware');
+var webpackConfig = require('./config/webpack.config');
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -10,6 +14,12 @@ var users = require('./routes/users');
 var comments = require('./routes/api/comments');
 
 var app = express();
+
+// webpack setup
+var compiler = webpack(webpackConfig);
+app.use(webpackDevMiddleware(compiler, {
+  noInfo: true, publicPath: webpackConfig.output.publicPath
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
